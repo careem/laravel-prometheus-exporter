@@ -83,7 +83,7 @@ class WorkerServiceProvider extends ServiceProvider
                         } else {
                             // Worker exiting because of other reasons
                             $errorCode = isset($event->exception) ? $event->exception->getCode() : -3;
-                            $status = "other_stopping_reason";
+                            $status = "other";
                         }
                         break;
                     case $event instanceof JobFailed:
