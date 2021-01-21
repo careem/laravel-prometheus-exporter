@@ -95,7 +95,7 @@ class WorkerServiceProvider extends ServiceProvider
                         $errorCode = isset($event->exception) ? $event->exception->getCode() : -1;
                         break;
                     default:
-                        $status = "unkown_status";
+                        $status = "unknown_status";
                         $errorCode = -1;
                 }
 
