@@ -44,16 +44,14 @@ class PrometheusLumenFastRouteMiddleware extends PrometheusLumenRouteMiddleware
 
             if(!empty($variableRouteData)) {
                 foreach ($variableRouteData[$method] as $data) {
-                    if (!preg_match($data['regex'], $uri, $matches)) {
-                        continue;
+                    if (preg_match($data['regex'], $uri, $matches)) {
+                        return new Route(
+                            $route['method'],
+                            $route['uri'],
+                            $route['action']
+                        );
                     }
                 }
-
-                return new Route(
-                    $route['method'],
-                    $route['uri'],
-                    $route['action']
-                );
             }
         }
 
